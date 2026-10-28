@@ -1,0 +1,162 @@
+================================================================================
+QUIBERR LOCAL AI AGENT — BLOCK 03B EVIDENCE EXPORT
+STRICT LIVE QWEN READ-BACK VALIDATION
+================================================================================
+Generated: 2026-10-28T22:33:00Z / 2026-10-29T00:33:00+02:00
+Target Repository: F:\AI_Agent
+Target File: F:\AI_Agent\workspace\block03_live_qwen.txt
+Local Model Engine: llama.cpp (F:\llama.cpp\llama-server.exe, PID 10296)
+Local Model File: F:\AI\Models\Qwen3-4B\Qwen3-4B-Q4_K_M.gguf
+Local Model Host/Port: 127.0.0.1:8081
+Provider Choice: Qwen Local (llama.cpp)
+Export Artifact: D:\AI\Antigravity\Exports\QUIBERR_LOCAL_AI_BLOCK03B_EVIDENCE.txt
+================================================================================
+
+1. EXACT USER PROMPT
+--------------------------------------------------------------------------------
+"Прочитай файл block03_live_qwen.txt та виведи його точний вміст у своїй відповіді."
+
+
+2. RAW QWEN PLANNER OUTPUT
+--------------------------------------------------------------------------------
+Prompt sent to Qwen Local on llama.cpp (Turn 1):
+  System prompt: Base SafeTools instruction with tool schemas.
+  User prompt: "Прочитай файл block03_live_qwen.txt та виведи його точний вміст у своїй відповіді."
+
+Raw Planner Output from Qwen Local (Turn 1, task 1003, 78 chars, duration 2831 ms):
+{"tools": [{"tool": "read_file", "args": {"path": "block03_live_qwen.txt"}}]}
+
+
+3. PARSED READ_FILE REQUEST
+--------------------------------------------------------------------------------
+Parsed Tool Request:
+  Tool: read_file
+  Arguments:
+  {
+    "path": "block03_live_qwen.txt"
+  }
+  Terminal: False
+
+
+4. REAL TOOL RESULT
+--------------------------------------------------------------------------------
+SafeTools.read_file executed:
+  Path: F:\AI_Agent\workspace\block03_live_qwen.txt
+  Status: OK (duration 4 ms)
+  Output Chars: 20
+  Raw Tool Output:
+BLOCK03_QWEN_UPDATED
+  Tool Result Object:
+ToolResult(ok=True, tool='read_file', output='BLOCK03_QWEN_UPDATED', error=None)
+
+
+5. CONTINUATION / FINAL QWEN RESPONSE
+--------------------------------------------------------------------------------
+Continuation Turn (Turn 2, task 1039, duration 3547 ms):
+  Continuation prompt fed real tool evidence to Qwen Local.
+  Qwen Local recognized no additional tools were needed, concluding the tool loop.
+
+Final Synthesis Turn (task 1077, duration 4014 ms):
+  query_local_qwen_final executed against local llama-server (port 8081).
+  Input Evidence: BLOCK03_QWEN_UPDATED
+
+Assistant Textual Response:
+"Я прочитав файл block03_live_qwen.txt та вивів його точний вміст. Згідно з даними, вміст файлу — "BLOCK03_QWEN_UPDATED". У процесі виконання завдання не виникло жодних проблем, тому статус виконання задачі — "PASS".
+
+Agent evidence: read_file PASS
+
+⏱ Час відповіді: 11.2 с"
+
+Verified:
+- Assistant response explicitly contains "BLOCK03_QWEN_UPDATED".
+- Evidence confirms read_file PASS.
+
+
+6. DIAGNOSTIC EVENTS
+--------------------------------------------------------------------------------
+Diagnostic Run ID: run_20261028T222939Z_1efa6fc7
+Diagnostic Archive: F:\AI_Agent\workspace\diagnostic_exports\Quiberr_Diagnostics_run_20261028T222939Z_1efa6fc7.zip
+Archive Size: 1716 bytes (zip integrity verified: True)
+
+From summary.json:
+{
+  "schema_version": 1,
+  "run_id": "run_20261028T222939Z_1efa6fc7",
+  "status": "PASS",
+  "started_utc": "2026-10-28T22:29:39.926559+00:00",
+  "finished_utc": "2026-10-28T22:29:51.127984+00:00",
+  "model_choice": "Qwen Local (llama.cpp)",
+  "user_message_chars": 82,
+  "user_message_sha256": "3fde4cc8ccf4badb7e89979ea347052e0634f13d71a8a4ababbf331564fd9b73",
+  "tool_calls": 1,
+  "provider_calls": 2,
+  "latest_coding_session_id": null,
+  "latest_project_id": null,
+  "stop_reason": "response_complete",
+  "elapsed_ms": 11201,
+  "response_chars": 272
+}
+
+From events.jsonl:
+Event 1: {"utc": "2026-10-28T22:29:39.928285+00:00", "elapsed_ms": 1, "phase": "run_start", "status": "START", "data": {}}
+Event 2: {"utc": "2026-10-28T22:29:42.773202+00:00", "elapsed_ms": 2846, "phase": "provider_call", "status": "PASS", "data": {"duration_ms": 2831, "response_chars": 78, "warning_chars": 0}}
+Event 3: {"utc": "2026-10-28T22:29:42.779136+00:00", "elapsed_ms": 2852, "phase": "tool_call", "status": "PASS", "data": {"tool_name": "read_file", "args": {"path": "block03_live_qwen.txt"}, "duration_ms": 4, "output_chars": 20, "error": null, "session_id": null, "project_id": null}}
+Event 4: {"utc": "2026-10-28T22:29:46.327848+00:00", "elapsed_ms": 6401, "phase": "provider_call", "status": "PASS", "data": {"duration_ms": 3547, "response_chars": 73, "warning_chars": 0}}
+Event 5: {"utc": "2026-10-28T22:29:51.128719+00:00", "elapsed_ms": 11202, "phase": "run_finish", "status": "PASS", "data": {"stop_reason": "response_complete", "response_chars": 272}}
+
+
+7. TARGET FILE SHA-256 BEFORE / AFTER
+--------------------------------------------------------------------------------
+Path: F:\AI_Agent\workspace\block03_live_qwen.txt
+SHA-256 Before: de04cd3c34cead33082fa7cef86718e2d244f9d35ade32c66de59d2306ec1b5d
+SHA-256 After:  de04cd3c34cead33082fa7cef86718e2d244f9d35ade32c66de59d2306ec1b5d
+Content: BLOCK03_QWEN_UPDATED (20 bytes)
+Filesystem Unchanged: TRUE (Byte-for-byte identical, strictly read-only execution)
+
+
+8. GIT STATUS BEFORE / AFTER
+--------------------------------------------------------------------------------
+Command: git -C "F:\AI_Agent" diff --check
+Output: (clean, exit code 0)
+
+Command: git -C "F:\AI_Agent" status --short
+Output:
+ M .gitignore
+ M agent_regression_tests.py
+ M coding_session.py
+ M security_policy.py
+ M tools.py
+ M web_agent.py
+?? agent_diagnostics.py
+?? workspace/
+
+Verification:
+- Zero production code files were modified during Block 03B.
+- Tracked file modifications are 100% identical to Block 01 & Block 02 verified baseline.
+- Zero git commit, checkout, clean, or merge operations performed.
+
+
+9. GEMINI FALLBACK COUNT
+--------------------------------------------------------------------------------
+Gemini Fallback Invocations: 0
+Provider Used: Qwen Local (llama.cpp) on 127.0.0.1:8081 exclusively.
+All provider turns (planner, continuation, final synthesis) were served by local llama-server.
+
+
+10. FINAL RUNTIME CLASSIFICATION
+--------------------------------------------------------------------------------
+Acceptance Criteria Verification:
+[PASS] Real Qwen provider used on llama.cpp (port 8081)
+[PASS] `read_file` tool explicitly requested by Qwen planner
+[PASS] Real SafeTools.read_file executed successfully (duration 4 ms)
+[PASS] Tool result was fed back to Qwen
+[PASS] Final Qwen textual response contains "BLOCK03_QWEN_UPDATED"
+[PASS] Diagnostics show provider -> read_file -> provider/final sequence
+[PASS] Filesystem remains unchanged (target file SHA-256 preserved)
+[PASS] No Gemini fallback (count = 0)
+[PASS] No production source modifications
+
+VERDICT:
+BLOCK03 STATUS: PASS
+RUNTIME STATUS: LIVE QWEN RUNTIME CONFIRMED
+================================================================================
